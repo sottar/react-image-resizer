@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 export default class Image extends React.Component {
   constructor(props) {
     super(props);
-    this.resizeImage = this.resizeImage.bind(this);
     this.state = {
       width: 0,
       height: 0,
+      isNoImage: false,
     };
+    this.resizeImage = this.resizeImage.bind(this);
+    this.showNoImage = this.showNoImage.bind(this);
   }
 
   resizeImage() {
@@ -33,6 +35,15 @@ export default class Image extends React.Component {
     }
   }
 
+  showNoImage() {
+    if (this.props.noImageSrc == undefined) {
+      return;
+    }
+    this.setState({
+      isNoImage: true,
+    });
+  }
+
   render() {
     const style = {
       wrapper: {
@@ -50,14 +61,26 @@ export default class Image extends React.Component {
         height: this.state.height,
       },
     };
-    return (
-      <div style={style.wrapper}>
-        <img
-          ref="image" src={this.props.src} alt="" style={style.image}
-          onLoad={this.resizeImage}
-         />
-      </div>
-    );
+    if (this.state.isNoImage) {
+      return (
+        <div style={style.wrapper}>
+          <img
+            ref="image" src={this.props.noImageSrc} alt="" style={style.image}
+            onLoad={this.resizeImage}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div style={style.wrapper}>
+          <img
+            ref="image" src={this.props.src} alt="" style={style.image}
+            onLoad={this.resizeImage}
+            onError={this.showNoImage}
+          />
+        </div>
+      );
+    }
   }
 }
 
@@ -66,4 +89,5 @@ Image.PropTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   backgroundColor: PropTypes.string,
+  noImageSrc: PropTypes.string,
 };
