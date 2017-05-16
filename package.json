@@ -3,8 +3,16 @@
   "description": "react image resizer",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sottar/react-image-resizer.git"
+  },
   "author": "sota ohara <ohrst.18@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sottar/react-image-resizer/issues"
+  },
+  "homepage": "https://github.com/sottar/react-image-resizer",
   "keywords": [
     "react-component",
     "react",
