@@ -65,7 +65,7 @@ export default class Image extends React.Component {
       return (
         <div style={style.wrapper}>
           <img
-            ref="image" src={this.props.noImageSrc} alt="" style={style.image}
+            ref="image" src={this.props.noImageSrc} alt={this.props.alt} style={style.image}
             onLoad={this.resizeImage}
           />
         </div>
@@ -74,7 +74,7 @@ export default class Image extends React.Component {
       return (
         <div style={style.wrapper}>
           <img
-            ref="image" src={this.props.src} alt="" style={style.image}
+            ref="image" src={this.props.src} alt={this.props.alt} style={style.image}
             onLoad={this.resizeImage}
             onError={this.showNoImage}
           />
@@ -88,6 +88,7 @@ Image.PropTypes = {
   src: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
+  alt: PropTypes.string,
   backgroundColor: PropTypes.string,
   noImageSrc: PropTypes.string,
 };
