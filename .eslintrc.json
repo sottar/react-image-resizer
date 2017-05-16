@@ -2,6 +2,12 @@
   "env": {
     "es6": true
   },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
   "extends": [
     "eslint:recommended"
   ],
@@ -10,9 +16,22 @@
   ],
   "rules": {
     "react/jsx-uses-vars": 1,
+    "react/jsx-uses-react": 1,
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "indent": [
       "error",
       2
+    ],
+    "key-spacing": [
+      "error",
+      { "mode": "strict", "beforeColon": false, "afterColon": true }
+    ],
+    "keyword-spacing": [
+      "error",
+      { "before": true, "after": true }
     ],
     "linebreak-style": [
       "error",
@@ -26,7 +45,9 @@
       "error",
       "always"
     ],
-    "react/jsx-uses-react": 1,
-    "comma-dangle": ["error", "always-multiline"]
+    "space-before-blocks": [
+      "error",
+      "always"
+    ]
   }
 }
