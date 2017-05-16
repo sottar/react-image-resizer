@@ -1,0 +1,40 @@
+{
+  "name": "react-image-resizer",
+  "description": "react image resizer",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "author": "sota ohara <ohrst.18@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react-component",
+    "react",
+    "image-resize",
+    "resize",
+    "image"
+  ],
+  "files": [
+    "README.md",
+    "lib",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "^0.44.2",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "lint": "eslint --max-warnings 0 --ignore-path .eslintignore .",
+    "prepublish": "npm run build"
+  }
+}
