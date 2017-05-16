@@ -1,7 +1,7 @@
 {
   "name": "react-image-resizer",
   "description": "react image resizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
