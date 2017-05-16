@@ -33,16 +33,27 @@
     "babel-eslint": "^7.2.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.44.2",
+    "jsdom": "^6.0.0",
+    "mocha": "^3.4.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4"
   },
   "scripts": {
     "build": "babel src --out-dir lib --source-maps",
     "lint": "eslint --max-warnings 0 --ignore-path .eslintignore .",
-    "prepublish": "npm run build"
+    "mocha": "mocha --require test/.setup.js --compilers js:babel-register",
+    "test": "yarn lint && yarn mocha",
+    "prepublish": "yarn build"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
