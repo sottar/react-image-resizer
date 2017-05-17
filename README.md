@@ -1,7 +1,7 @@
 # react-image-resizer
 
+[![Build Status](https://travis-ci.org/sottar/react-image-resizer.svg?branch=master)](https://travis-ci.org/sottar/react-image-resizer)
 [![npm version](https://badge.fury.io/js/react-image-resizer.svg)](https://badge.fury.io/js/react-image-resizer)
-
 
 `react-image-resizer` is a React component that resizes the image to be nice.
 
