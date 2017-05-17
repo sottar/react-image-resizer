@@ -25,7 +25,7 @@ export default class Image extends React.Component {
     if (widthRatio < heightRatio) {
       this.setState({
         width: originalWidth * widthRatio,
-        height: originalHeight * heightRatio,
+        height: originalHeight * widthRatio,
       });
     } else {
       this.setState({
