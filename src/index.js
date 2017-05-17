@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import { m } from './utils';
 
 export default class Image extends React.Component {
   constructor(props) {
@@ -47,10 +48,9 @@ export default class Image extends React.Component {
   render() {
     const style = {
       wrapper: {
-        backgroundColor: this.props.backgroundColor,
         position: 'relative',
-        minWidth: this.props.width,
-        minHeight: this.props.height,
+        width: this.props.width,
+        height: this.props.height,
       },
       image: {
         position: 'absolute',
@@ -63,7 +63,7 @@ export default class Image extends React.Component {
     };
     if (this.state.isNoImage) {
       return (
-        <div style={style.wrapper}>
+        <div style={m(this.props.style, style.wrapper)}>
           <img
             ref="image" src={this.props.noImageSrc} alt={this.props.noImageAlt || 'noimage'} style={style.image}
             onLoad={this.resizeImage}
@@ -72,7 +72,7 @@ export default class Image extends React.Component {
       );
     } else {
       return (
-        <div style={style.wrapper}>
+        <div style={m(this.props.style, style.wrapper)}>
           <img
             ref="image" src={this.props.src} alt={this.props.alt} style={style.image}
             onLoad={this.resizeImage}
@@ -89,7 +89,7 @@ Image.PropTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   alt: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  style: PropTypes.object,
   noImageSrc: PropTypes.string,
   noImageAlt: PropTypes.string,
 };
