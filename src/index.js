@@ -49,8 +49,8 @@ export default class Image extends React.Component {
       wrapper: {
         backgroundColor: this.props.backgroundColor,
         position: 'relative',
-        width: '100%',
-        height: '100%',
+        minWidth: this.props.width,
+        minHeight: this.props.height,
       },
       image: {
         position: 'absolute',
