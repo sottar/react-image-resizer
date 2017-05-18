@@ -27,15 +27,81 @@ class App extends React.Component {
       <div>
         <Image
           src="path/to/image.jpg"
-          alt="image description"
-          height={100}
-          width={100}
+          height={ /*resize height*/ }
+          width={ /*resize width*/ }
         />
       </div>
     );
   }
 }
 ```
+
+## Examples
+
+### Horizontally long
+
+``` javascript
+<Image
+  src="./assets/apples.jpg"
+  alt="apples in the bowl"
+  width={240}
+  height={240}
+  style={style.image}
+/>
+const style = {
+  image: {
+    border: '1px solid #ccc',
+    background: '#fefefe',
+  },
+};
+```
+
+![Horizontally](example-images/horizontally.png)
+
+
+
+### Vertically long
+
+``` javascript
+<Image
+  src="./assets/flower.jpg"
+  alt="flowes"
+  width={240}
+  height={240}
+  style={style.image}
+/>
+const style = {
+  image: {
+    border: '1px solid #ccc',
+    background: '#fefefe',
+  },
+};
+```
+
+![Vertically](example-images/vertically.png)
+
+
+### No image
+
+``` javascript
+<Image
+  src="./assets/404" // incorrect path
+  alt="apples in the bowl"
+  noImageSrc="./assets/noimage.png"
+  noImageAlt="no image"
+  width={240}
+  height={240}
+  style={style.image}
+/>
+const style = {
+  image: {
+    border: '1px solid #ccc',
+    background: '#fefefe',
+  },
+};
+```
+
+![noimage](example-images/noimage.png)
 
 ## Options
 
@@ -45,7 +111,7 @@ src | true | String |  | Path to your image
 alt | false | String |  | Image description
 height | true | Number | 0 | Height after resize (px only)
 width | true | Number | 0 | Width after resize (px only)
-backgroundColor | false | String |  | Background color of wrap image
+style | false | object |  | Wrapper style of image
 noImageSrc | false | String |  | Path when image could not be acquired
 noImageAlt | false | String | 'noimage' | description when image could not be acquired
 
