@@ -51,6 +51,7 @@ export default class Image extends React.Component {
         position: 'relative',
         width: this.props.width,
         height: this.props.height,
+        backgroundColor: this.props.backgroundColor,
       },
       image: {
         position: 'absolute',
@@ -89,6 +90,7 @@ Image.PropTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   alt: PropTypes.string,
+  backgroundColor: PropTypes.string,
   style: PropTypes.object,
   noImageSrc: PropTypes.string,
   noImageAlt: PropTypes.string,
