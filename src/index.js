@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import m from './utils';
-import { type } from 'os';
 
 type Props = {
   src: string;
@@ -29,16 +28,15 @@ export default class Image extends React.Component<Props, State> {
       height: 0,
       isNoImage: false,
     };
-    this.resizeImage = this.resizeImage.bind(this);
-    this.showNoImage = this.showNoImage.bind(this);
   }
 
-  resizeImage() {
-    if (ReactDOM.findDOMNode(this.refs.image) == null) {
+  resizeImage = () => {
+    const target = ReactDOM.findDOMNode(this.refs.image);
+    if (target === null) {
       return;
     }
-    const originalWidth = ReactDOM.findDOMNode(this.refs.image).naturalWidth;
-    const originalHeight = ReactDOM.findDOMNode(this.refs.image).naturalHeight;
+    const originalWidth = target instanceof HTMLImageElement ? target.naturalWidth : 0;
+    const originalHeight = target instanceof HTMLImageElement ? target.naturalHeight : 0;
     const widthRatio = this.props.width / originalWidth;
     const heightRatio = this.props.height / originalHeight;
     if (widthRatio < heightRatio) {
@@ -54,7 +52,7 @@ export default class Image extends React.Component<Props, State> {
     }
   }
 
-  showNoImage() {
+  showNoImage = () => {
     if (this.props.noImageSrc == undefined) {
       return;
     }
@@ -80,9 +78,10 @@ export default class Image extends React.Component<Props, State> {
         height: this.state.height,
       },
     };
+    const wrapperStyle = this.props.style ? m(this.props.style, style.wrapper) : style.wrapper;
     if (this.state.isNoImage) {
       return (
-        <div style={m(this.props.style, style.wrapper)}>
+        <div style={wrapperStyle}>
           <img
             ref="image" src={this.props.noImageSrc} alt={this.props.noImageAlt || 'noimage'} style={style.image}
             onLoad={this.resizeImage}
@@ -91,7 +90,7 @@ export default class Image extends React.Component<Props, State> {
       );
     } else {
       return (
-        <div style={m(this.props.style, style.wrapper)}>
+        <div style={wrapperStyle}>
           <img
             ref="image" src={this.props.src} alt={this.props.alt} style={style.image}
             onLoad={this.resizeImage}

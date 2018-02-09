@@ -9,6 +9,10 @@
       }
     ],
     "react",
-    "flow"
+    "flow",
+    "stage-3"
+  ],
+  "plugins": [
+    "transform-class-properties"
   ]
 }
