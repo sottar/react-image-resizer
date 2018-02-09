@@ -26,7 +26,7 @@
     "src"
   ],
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -35,16 +35,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^3.5.0",
-    "enzyme": "^2.8.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.44.2",
     "jsdom": "^6.0.0",
     "mocha": "^3.4.1",
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4"
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0"
   },
   "scripts": {
     "build": "babel src --out-dir lib --source-maps",
