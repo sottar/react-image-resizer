@@ -13,9 +13,12 @@
     "eslint:recommended"
   ],
   "plugins": [
-    "react"
+    "react",
+    "flowtype"
   ],
   "rules": {
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1,
     "react/jsx-uses-vars": 1,
     "react/jsx-uses-react": 1,
     "comma-dangle": [

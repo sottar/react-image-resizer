@@ -1,10 +1,28 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import { m } from './utils';
+import m from './utils';
+import { type } from 'os';
 
-export default class Image extends React.Component {
-  constructor(props) {
+type Props = {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+  backgroundColor?: string;
+  style?: Object;
+  noImageSrc?: string;
+  noImageAlt?: string;
+}
+
+type State = {
+  width: number;
+  height: number;
+  isNoImage: boolean;
+}
+
+export default class Image extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       width: 0,
@@ -84,14 +102,3 @@ export default class Image extends React.Component {
     }
   }
 }
-
-Image.PropTypes = {
-  src: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-  alt: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  style: PropTypes.object,
-  noImageSrc: PropTypes.string,
-  noImageAlt: PropTypes.string,
-};
