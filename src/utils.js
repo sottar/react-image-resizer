@@ -1,9 +1,12 @@
+// @flow
 import assign from 'object-assign';
 
-export const m = function() {
+const m = function (...args: Array<Object>) {
   let res = {};
-  for (let i = 0; i < arguments.length; ++i) {
-    if (arguments[i]) assign(res, arguments[i]);
+  for (let i = 0; i < args.length; ++i) {
+    if (args[i]) assign(res, args[i]);
   }
   return res;
 };
+
+export default m;

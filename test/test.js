@@ -1,12 +1,16 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
-import {expect} from 'chai';
+import { shallow, mount } from 'enzyme';
+import { expect } from 'chai';
 import Image from '../src/index.js';
 
 describe('<Image />', () => {
   it('should render div and image tag', () => {
     const wrapper = shallow(
-      <Image />
+      <Image
+        src="path/to/image.jpg"
+        width={120}
+        height={120}
+      />
     );
     expect(wrapper.find('div')).to.have.length(1);
     expect(wrapper.find('div img')).to.have.length(1);

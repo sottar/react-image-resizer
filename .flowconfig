@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/.*
+.*/flow-typed/.*
+.*/test/.*
+
+[include]
+.*/src/.*
+
+[libs]
+
+[options]
+module.use_strict=true
+module.file_ext=.js
