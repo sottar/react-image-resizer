@@ -1529,11 +1529,11 @@ escodegen@^1.6.1:
   optionalDependencies:
     source-map "~0.2.0"
 
-eslint-plugin-flowtype@2.42.0:
-  version "2.42.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.42.0.tgz#7fcc98df4ed9482a22ac10ba4ca48d649c4c733a"
+eslint-plugin-flowtype@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-4.6.0.tgz#82b2bd6f21770e0e5deede0228e456cb35308451"
   dependencies:
-    lodash "^4.15.0"
+    lodash "^4.17.15"
 
 eslint-plugin-react@6.10.3:
   version "6.10.3"
@@ -2567,7 +2567,7 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash@^4.15.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.15.0, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
 
