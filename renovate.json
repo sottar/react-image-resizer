@@ -1,5 +1,16 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["every weekend"],
+  "labels": ["renovate"],
+  "major": {
+    "groupName": "all major dependencies"
+  },
+  "minor": {
+    "groupName": "all minor dependencies"
+  },
+  "patch": {
+    "automerge": true,
+    "groupName": "all patch dependencies"
+  }
 }
