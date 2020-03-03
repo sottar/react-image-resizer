@@ -45,7 +45,7 @@
     "eslint-plugin-flowtype": "2.42.0",
     "eslint-plugin-react": "6.10.3",
     "flow-bin": "0.119.1",
-    "flow-typed": "2.3.0",
+    "flow-typed": "3.0.0",
     "jsdom": "6.5.1",
     "mocha": "3.5.3",
     "react": "16.2.0",
