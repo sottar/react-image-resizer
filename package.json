@@ -1,5 +1,5 @@
 {
-  "name": "react-image-resizer",
+  "name": "@sottar/react-image-resizer",
   "description": "react image resizer",
   "version": "1.3.0",
   "main": "lib/index.js",
@@ -61,5 +61,8 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
